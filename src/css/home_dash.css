@@ -1,0 +1,159 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Dashboard Main Container */
+.dash_main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100px;
+}
+.frist_section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.home_dash_logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Dashboard Links Section */
+.dashboard_links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.iteams h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+}
+
+/* About Link */
+.home_dash_about a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.home_dash_about a:hover {
+  color: #0056b3;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.home_dash_reg_butt,
+.home_dash_log_butt {
+  background-color: #007bff;
+  color: white;
+}
+
+.home_dash_reg_butt:hover,
+.home_dash_log_butt:hover {
+  background-color: #0056b3;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 40px; /* Adjust to align below the button */
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 150px;
+  padding: 10px 0;
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  background: none;
+  color: #333;
+  padding: 10px;
+  border: none;
+  text-align: left;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dash_main {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .home_dash_logo img {
+    max-width: 120px;
+  }
+
+  .iteams h3 {
+    font-size: 1.3rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard_links {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .home_dash_about a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home_dash_logo img {
+    max-width: 100px;
+  }
+
+  .iteams h3 {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  .dropdown-menu {
+    width: 120px;
+  }
+}

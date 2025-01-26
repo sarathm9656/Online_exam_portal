@@ -1,0 +1,102 @@
+.login_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f7fc;
+}
+
+.login_main {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login_head h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.username_section, .pass_section {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+}
+
+.log_butt_div {
+    text-align: center;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #6c63ff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #5753e0;
+}
+
+input[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+p a {
+    color: #6c63ff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login_main {
+        padding: 15px;
+        width: 90%;
+    }
+
+    .login_head h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        font-size: 14px;
+    }
+}
