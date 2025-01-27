@@ -22,6 +22,11 @@ export default function Home_dash() {
     renavigate(`/${type}/${role}`);
   };
 
+    const navigate = useNavigate();
+  
+    const handleNavigate = () => {
+      navigate("/login");
+    };
   return (
     <>
       <div className="dash_main">
@@ -51,10 +56,11 @@ export default function Home_dash() {
           )}
         </div>
 
-        <div className="iteams" style={{ position: "relative" }}>
-          <button className="home_dash_log_butt" onClick={() => handleMenuClick("login", "student_login")}>
+        <div className="iteams" >
+          <button className="home_dash_reg_butt" onClick={ handleNavigate }>
             Login
           </button>
+
           {/* {showLoginMenu && (
             <div className="dropdown-menu">
               <button onClick={() => handleMenuClick("login", "student_login")}>Student</button>

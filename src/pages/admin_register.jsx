@@ -23,7 +23,7 @@ export default function Register() {
             // Handle successful registration
             if (response.status === 201) {
                 toast.success("Registration successful");
-                navigate("/login/student_login"); // Redirect to login page
+                navigate("/login"); // Redirect to login page
             }
         } catch (error) {
             // Handle errors

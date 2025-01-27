@@ -16,6 +16,7 @@ import DashboardPage from "./pages/admin-dashpage";
 import ExamAttend from "./pages/examattent";
 import Mark_ExamList from "./pages/ListAll_exam_in-mark";
 import ALL_stu_ExamResults from "./pages/All-students_mark";
+import ExamSummary from "./pages/mark_pop";
 import axios from "axios";
 
 // Set Axios Base URL
@@ -54,7 +55,7 @@ function App() {
           <Route path="/student" element={ <Auth> <HomeDashboard /> </Auth> } />
           <Route path="/view_exam" element={<ShowExams/>}/>
           <Route path="/attend-exam/:examId" element={<ExamAttend userId={userId} />} />
-
+          <Route path="/summery" element={<ExamSummary/>}/>
           {/* </Route> */}
             <Route path="/attent_exam" element={<ExamAttend/>}/>
           {/* <Route path="/exam" element={<ViewExamById/>}/> */}

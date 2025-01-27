@@ -1,7 +1,19 @@
 import React from "react";
 import "./student_dash.css"
+import { useNavigate } from "react-router-dom";
 
 export default function Home_Dashboard() {
+  const navigate = useNavigate();
+  const removetoken =()=>{
+    localStorage.removeItem("token")
+    const tok=localStorage.getItem("token")
+
+
+    if(!tok){
+      navigate("/")
+    }
+  }
+  
   return (
     <div className="dashboard-container">
       {/* Sidebar */}
@@ -16,7 +28,7 @@ export default function Home_Dashboard() {
             <li><a href="#">Question Bank</a></li>
             <li><a href="/view_exam">Exam </a></li>
             <li><a href="#">Result</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="#" onClick={removetoken}>Log out</a></li>
           </ul>
         </nav>
         <div className="sidebar-footer">

@@ -1,5 +1,6 @@
 import React from "react";
 import "./teacherDashPage.css";
+import { useNavigate } from "react-router-dom";
 
 const DashboardPage = () => {
   const cards = [
@@ -8,8 +9,15 @@ const DashboardPage = () => {
     { color: "yellow", title: "classes", value: 8 },
     // { color: "red", title: "Super Administrator", value: 1 },
   ];
-  const remove = ()=>{
-    localStorage.removeItem("authToken");
+  const navigate = useNavigate();
+  const removetoken =()=>{
+    localStorage.removeItem("token")
+    const tok=localStorage.getItem("token")
+
+
+    if(!tok){
+      navigate("/")
+    }
   }
   return (
     <div className="dashboard-page">
@@ -17,12 +25,12 @@ const DashboardPage = () => {
       <div className="sidebar">
         <h2>CBT</h2>
         <ul>
-          <li><a href="">Dashboard</a></li>
-          <li><a href="/users">Users</a></li>
-          <li><a href="/classes">Classes</a></li>
-          <li><a href="/tests">Tests</a></li>
-          <li><a href="/results">Results</a></li>
-          <li><a href="/logout " onClick={remove}>Log out</a></li>
+          <li><a href="/AddExam">Create Exam</a></li>
+          <li><a href="/exams_mark">Result</a></li>
+          <li><a href="/classes">users</a></li>
+          <li><a href="">Tests</a></li>
+          <li><a href="/results">overview</a></li>
+          <li><a href="" onClick={removetoken}>Log out</a></li>
         </ul>
       </div>
 

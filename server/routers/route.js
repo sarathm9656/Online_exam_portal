@@ -10,9 +10,9 @@ router.route('/register/trainer').post(userHandler.T_register);
 router.route('/register/admin').post(userHandler.Ad_register);
 
 // Routes for logging in a user
-router.route('/login/student').post(userHandler.login);
-router.route('/login/trainer').post(userHandler.login);
-router.route('/login/admin').post(userHandler.login);
+router.route('/login').post(userHandler.login);
+// router.route('/login/trainer').post(userHandler.login);
+// router.route('/login/admin').post(userHandler.login);
 
 // Routes for exam handling
 router.route('/create_exam').post(examHandler.createExam);
