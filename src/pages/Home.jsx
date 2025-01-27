@@ -10,7 +10,7 @@ export default function Home() {
 
       <div className="aq">
         <div className="home_left_part">
-
+       
     <div className="home_para_section">
             <h1 className="home_page_image_head">Online
                Education</h1>
