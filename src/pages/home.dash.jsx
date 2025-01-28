@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaBars } from "react-icons/fa";  // Import the menu icon from react-icons
 import examport_logo from "../images/easy-win-logo-removebg-preview.png";
 import "../css/home_dash.css";
 
@@ -7,43 +8,54 @@ export default function Home_dash() {
   const renavigate = useNavigate();
   const [showRegisterMenu, setShowRegisterMenu] = useState(false);
   const [showLoginMenu, setShowLoginMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const toggleRegisterMenu = () => {
     setShowRegisterMenu((prev) => !prev);
-    setShowLoginMenu(false); 
+    setShowLoginMenu(false);
   };
 
   const toggleLoginMenu = () => {
     setShowLoginMenu((prev) => !prev);
-    setShowRegisterMenu(false); 
+    setShowRegisterMenu(false);
   };
 
   const handleMenuClick = (type, role) => {
     renavigate(`/${type}/${role}`);
   };
 
-    const navigate = useNavigate();
-  
-    const handleNavigate = () => {
-      navigate("/login");
-    };
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate("/login");
+  };
+
+  const handleMenuToggle = () => {
+    setShowMenu((prev) => !prev);
+  };
+
   return (
-    <>
+    
       <div className="dash_main">
-        <div className="frist_section">
-          <div className="home_dash_logo">
+        <div className="first_section">
+          <div className="home_dash_logo_section">
             <img src={examport_logo} alt="examport logo" className="home_dash_logo" />
+            <h3 className="exam_portal_name">Online Exam Portal</h3>
+
           </div>
-          <div className="iteams">
-            <h3>Online Exam Portal</h3>
+          <div className="items">
           </div>
         </div>
 
         <div className="home_dash_about">
-          <Link to="/about">ABOUT</Link>
+          <Link to="/about"></Link>
         </div>
 
-        <div className="iteams" style={{ position: "relative" }}>
+        <div className="menu_icon" onClick={handleMenuToggle}>
+          <FaBars />
+        </div>
+
+        <div className={`iteams ${showMenu ? "show" : ""}`} style={{ position: "relative" }}>
           <button className="home_dash_reg_butt" onClick={toggleRegisterMenu}>
             Register
           </button>
@@ -56,53 +68,10 @@ export default function Home_dash() {
           )}
         </div>
 
-        <div className="iteams" >
-          <button className="home_dash_reg_butt" onClick={ handleNavigate }>
+        <div className={`iteams ${showMenu ? "show" : ""}`}>
+          <button className="home_dash_reg_butt" onClick={handleNavigate}>
             Login
           </button>
-
-          {/* {showLoginMenu && (
-            <div className="dropdown-menu">
-              <button onClick={() => handleMenuClick("login", "student_login")}>Student</button>
-              <button onClick={() => handleMenuClick("login", "teacher_login")}>Teacher</button>
-              <button onClick={() => handleMenuClick("login", "admin_login")}>Admin</button>
-            </div>
-          )} */}
         </div>
       </div>
-
-      
-      <style>
-        {`
-          .dropdown-menu {
-            position: absolute;
-            top: 50px;
-            left: 0;
-            background: #f1f1f1;
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 1000;
-          }
-          .dropdown-menu button {
-            display: block;
-            width: 100%;
-            margin-bottom: 5px;
-            background: #007bff;
-            color: white;
-            border: none;
-            padding: 8px;
-            border-radius: 3px;
-            cursor: pointer;
-          }
-          .dropdown-menu button:hover {
-            background: #0056b3;
-          }
-          .home_dash_reg_butt, .home_dash_log_butt {
-            margin-top: 10px;
-          }
-        `}
-      </style>
-    </>
-  );
-}
+  )};
